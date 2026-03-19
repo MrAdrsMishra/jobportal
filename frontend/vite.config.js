@@ -11,8 +11,4 @@ export default defineConfig({
     },
   },
 
-  server: {
-    port: 5175,       // 🔥 fixed port
-    strictPort: true  // ❌ prevents auto switching
-  }
 })

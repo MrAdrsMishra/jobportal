@@ -9,7 +9,7 @@ import { toast } from 'sonner';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLoading } from '@/redux/authSlice';
 import { Loader2 } from 'lucide-react';
-
+import { API_BASE_URL } from '@/utils/constant';
 const Signup = () => {
     const [input, setInput] = useState({
         fullname: "",
@@ -37,7 +37,7 @@ const Signup = () => {
         try {
             dispatch(setLoading(true));
 
-            const res = await axios.post("/api/auth/register", {
+            const res = await axios.post(API_BASE_URL+"/api/auth/register", {
                 fullname: input.fullname,
                 email: input.email,
                 password: input.password,

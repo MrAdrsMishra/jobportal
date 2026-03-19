@@ -10,6 +10,7 @@ import { toast } from 'sonner'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLoading, setUser } from '@/redux/authSlice'
 import { Loader2 } from 'lucide-react'
+import { API_BASE_URL } from '@/utils/constant';
 
 const Login = () => {
     const [input, setInput] = useState({
@@ -38,7 +39,7 @@ const Login = () => {
             dispatch(setLoading(true));
 
             //  FIXED URL (IMPORTANT CHANGE)
-            const res = await axios.post("http://localhost:8000/api/auth/login", {
+            const res = await axios.post(API_BASE_URL+"/api/auth/login", {
                 email: input.email,
                 password: input.password,
                 role: input.role
